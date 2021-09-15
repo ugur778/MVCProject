@@ -1,0 +1,44 @@
+﻿@model  DTO.UserNotExistRoleDto
+@{
+    ViewBag.Title = "UserRoleList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserRoleList</h2>
+
+<p>
+    @Html.ActionLink("Create New Role", "RoleCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedRoleId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.NotSelectedRoles)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => Model.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @*@Html.ActionLink("Add", "AddUserRole", "", null, new { @class = "btn btn-primary btn-default" })*@
+
+                @Html.ActionLink("Add User Role", "AddUserRole", new { roleId = item.Value, userId = Model.UserId })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Return To Index", "Index")
+</p>

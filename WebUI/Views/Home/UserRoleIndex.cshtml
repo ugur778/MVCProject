@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DTO.UserRoleDto>
+
+@{
+    ViewBag.Title = "UserRoleIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserRoleIndex</h2>
+
+<p>
+    @Html.ActionLink("Add New", "UserRoleList", new
+    {
+        userId = ViewBag.UserId,
+    userName = ViewBag.UserName
+    })
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "UserRoleDelete", new { id = item.Id, userId = item.UserId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Return To Index", "Index")
+</p>

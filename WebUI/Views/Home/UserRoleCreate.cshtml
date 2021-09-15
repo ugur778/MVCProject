@@ -1,0 +1,56 @@
+﻿@model DTO.UserNotExistRoleDto
+
+@{
+    ViewBag.Title = "UserRoleCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserRoleCreate</h2>
+
+<table class="table">
+    @Html.AntiForgeryToken()
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotSelectedRoles)
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            <div class="form-group">
+                <div class="col-md-0">
+                    @Html.TextBoxFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", disaled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="col-md-0">
+                @Html.DropDownListFor(model => model.SelectedRoleId, Model.NotSelectedRoles)
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-0">
+                    <input type="submit" value="Add" class="btn btn-default" />
+                </div>
+            </div>
+            @*@Html.ActionLink("Add", "Edit", new { id = item.Id })*@
+        </td>
+    </tr>
+ </table>
+
+@using (Html.BeginForm())
+{
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
