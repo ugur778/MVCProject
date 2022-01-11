@@ -33,8 +33,8 @@ F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\bin\Debug
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\bin\Debug\System.Web.WebPages.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\bin\Debug\System.Web.WebPages.Razor.xml
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.csproj.CopyComplete
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.pdb
+F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

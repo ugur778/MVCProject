@@ -151,13 +151,11 @@ F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\ros
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\roslyn\VBCSCompiler.exe
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\roslyn\VBCSCompiler.exe.config
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Antlr3.Runtime.dll
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\DTO.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\EntityFramework.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\EntityFramework.SqlServer.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Microsoft.Web.Infrastructure.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Newtonsoft.Json.dll
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Service.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.Helpers.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.Mvc.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.Optimization.dll
@@ -166,10 +164,6 @@ F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Sys
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.WebPages.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.WebPages.Razor.dll
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\WebGrease.dll
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Repository.dll
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\AutoMapper.dll
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\DTO.pdb
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Service.pdb
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\EntityFramework.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\EntityFramework.SqlServer.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\System.Web.Helpers.xml
@@ -182,7 +176,4 @@ F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Sys
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Newtonsoft.Json.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Antlr3.Runtime.pdb
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Repository.pdb
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\Repository.dll.config
-F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\bin\AutoMapper.xml
 F:\İndirilenler\20210822-20210824T151557Z-001\20210822\MVCProject\WebUI\obj\Debug\WebUI.csproj.CopyComplete

@@ -1,46 +1,20 @@
-﻿using Service;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebUI.MvcProjectService;
 
 namespace WebUI.Controllers
 {
     public class BaseController : Controller
     {
-        private UserInfoService _userInfoService;
-        private RoleService _roleService;
-        private UserRoleService _userRoleService;
-
-        public UserRoleService UserRoleService
+        private WcfServiceClient _projectService;
+        public WcfServiceClient ProjectService
         {
             get
             {
-                if (_userRoleService is null)
+                if (_projectService is null)
                 {
-                    _userRoleService = new UserRoleService();
+                    _projectService = new WcfServiceClient();
                 }
-                return _userRoleService;
-            }
-        }
-
-        public UserInfoService UserInfoService
-        {
-            get
-            {
-                if (_userInfoService is null)
-                {
-                    _userInfoService = new UserInfoService();
-                }
-                return _userInfoService;
-            }
-        }
-        public RoleService RoleService
-        {
-            get
-            {
-                if (_roleService is null)
-                {
-                    _roleService = new RoleService();
-                }
-                return _roleService;
+                return _projectService;
             }
         }
     }

@@ -7,14 +7,14 @@ namespace Service
 {
     public partial class RoleService : BaseService, IRoleService
     {
-        public IList<RoleDto> GetAll()
+        public IList<RoleDto> GetRoleAll()
         {
             var result = RoleRepository.GetAll();
             var roleDtoList = RoleToRoleDtoMapper.Map<List<RoleDto>>(result);
             return roleDtoList;
         }
 
-        public RoleDto GetById(int id)
+        public RoleDto GetRoleById(int id)
         {
             var result = RoleRepository.GetById(id);
 
@@ -23,7 +23,10 @@ namespace Service
             return roleDto;
         }
 
-        public KeyValuePair<bool, string> Insert(RoleDto roleDto)
+
+
+
+        public KeyValuePair<bool, string> InsertRole(RoleDto roleDto)
         {
 
             var validationResult = SameNameValidation(roleDto.Name);
@@ -39,14 +42,16 @@ namespace Service
 
 
 
-        public bool Remove(int id)
+        public bool RemoveRole(int id)
         {
             var removedItem = RoleRepository.GetById(id);
             RoleRepository.Remove(removedItem);
             return true;
         }
 
-        public bool Update(RoleDto roleDto)
+
+
+        public bool UpdateRole(RoleDto roleDto)
         {
             var updatedModel = RoleRepository.GetById(roleDto.Id);
             //var config = new MapperConfiguration(cfg => cfg.CreateMap<UserInfoDto, UserInfo>());
@@ -59,5 +64,7 @@ namespace Service
             var result = RoleRepository.Update(updatedModel);
             return result;
         }
+
+
     }
 }

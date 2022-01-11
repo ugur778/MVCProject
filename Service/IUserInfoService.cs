@@ -1,14 +1,21 @@
 ﻿using DTO;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace Service
 {
+    [ServiceContract]
     public interface IUserInfoService
     {
-        UserInfoDto GetById(int id);
-        IList<UserInfoDto> GetAll();
-        ResponseBase<bool> Insert(UserInfoDto userInfoDto);
-        bool Remove(int Id);
-        bool Update(UserInfoDto userInfoDto);
+        [OperationContract]
+        UserInfoDto GetUserInfoById(int id);
+        [OperationContract]
+        IList<UserInfoDto> GetUserInfoAll();
+        [OperationContract]
+        ResponseBase<bool> InsertUserInfo(UserInfoDto userInfoDto);
+        [OperationContract]
+        bool RemoveUserInfo(int Id);
+        [OperationContract]
+        bool UpdateUserInfo(UserInfoDto userInfoDto);
     }
 }

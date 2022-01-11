@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:65356/WcfService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:65356/WcfService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65356/WcfService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO" />
+      <xsd:import schemaLocation="http://localhost:65356/WcfService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://localhost:65356/WcfService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfService_GetRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleById" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetRoleAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleAll" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetRoleAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserInfoAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAll" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserInfoAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleById" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserRoleAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleAll" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_GetUserRoleAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_InsertUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_RemoveUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IWcfService_UpdateUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfService">
+    <wsdl:operation name="GetRoleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleService/GetRoleById" message="tns:IWcfService_GetRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleService/GetRoleByIdResponse" message="tns:IWcfService_GetRoleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleService/GetRoleAll" message="tns:IWcfService_GetRoleAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleService/GetRoleAllResponse" message="tns:IWcfService_GetRoleAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleService/InsertRole" message="tns:IWcfService_InsertRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleService/InsertRoleResponse" message="tns:IWcfService_InsertRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleService/RemoveRole" message="tns:IWcfService_RemoveRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleService/RemoveRoleResponse" message="tns:IWcfService_RemoveRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleService/UpdateRole" message="tns:IWcfService_UpdateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleService/UpdateRoleResponse" message="tns:IWcfService_UpdateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/GetUserInfoById" message="tns:IWcfService_GetUserInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/GetUserInfoByIdResponse" message="tns:IWcfService_GetUserInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/GetUserInfoAll" message="tns:IWcfService_GetUserInfoAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/GetUserInfoAllResponse" message="tns:IWcfService_GetUserInfoAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/InsertUserInfo" message="tns:IWcfService_InsertUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/InsertUserInfoResponse" message="tns:IWcfService_InsertUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/RemoveUserInfo" message="tns:IWcfService_RemoveUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/RemoveUserInfoResponse" message="tns:IWcfService_RemoveUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/UpdateUserInfo" message="tns:IWcfService_UpdateUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/UpdateUserInfoResponse" message="tns:IWcfService_UpdateUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRoleService/GetUserRoleById" message="tns:IWcfService_GetUserRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRoleService/GetUserRoleByIdResponse" message="tns:IWcfService_GetUserRoleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRoleService/GetUserRoleAll" message="tns:IWcfService_GetUserRoleAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRoleService/GetUserRoleAllResponse" message="tns:IWcfService_GetUserRoleAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRoleService/InsertUserRole" message="tns:IWcfService_InsertUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRoleService/InsertUserRoleResponse" message="tns:IWcfService_InsertUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRoleService/RemoveUserRole" message="tns:IWcfService_RemoveUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRoleService/RemoveUserRoleResponse" message="tns:IWcfService_RemoveUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRoleService/UpdateUserRole" message="tns:IWcfService_UpdateUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRoleService/UpdateUserRoleResponse" message="tns:IWcfService_UpdateUserRole_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfService" type="tns:IWcfService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleById">
+      <soap:operation soapAction="http://tempuri.org/IRoleService/GetRoleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAll">
+      <soap:operation soapAction="http://tempuri.org/IRoleService/GetRoleAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRole">
+      <soap:operation soapAction="http://tempuri.org/IRoleService/InsertRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRole">
+      <soap:operation soapAction="http://tempuri.org/IRoleService/RemoveRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <soap:operation soapAction="http://tempuri.org/IRoleService/UpdateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/GetUserInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAll">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/GetUserInfoAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/InsertUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/RemoveUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleById">
+      <soap:operation soapAction="http://tempuri.org/IUserRoleService/GetUserRoleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleAll">
+      <soap:operation soapAction="http://tempuri.org/IUserRoleService/GetUserRoleAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUserRoleService/InsertUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUserRoleService/RemoveUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUserRoleService/UpdateUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfService">
+    <wsdl:port name="BasicHttpBinding_IWcfService" binding="tns:BasicHttpBinding_IWcfService">
+      <soap:address location="http://localhost:65356/WcfService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

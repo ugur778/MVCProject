@@ -9,7 +9,7 @@ namespace Service
 {
     public partial class UserInfoService : BaseService, IUserInfoService
     {
-        public IList<UserInfoDto> GetAll()
+        public IList<UserInfoDto> GetUserInfoAll()
         {
             var result = UserInfoRepository.GetAll();
             var userInfoDto = UserInfoToUserInfoDtoMapper.Map<List<UserInfoDto>>(result);
@@ -31,16 +31,14 @@ namespace Service
             return userInfoDto;
         }
 
-        public UserInfoDto GetById(int id)
+        public UserInfoDto GetUserInfoById(int id)
         {
             var result = UserInfoRepository.GetById(id);
-
             var userInfoDto = UserInfoToUserInfoDtoMapper.Map<UserInfoDto>(result);
-
             return userInfoDto;
         }
 
-        public ResponseBase<bool> Insert(UserInfoDto userInfoDto)
+        public ResponseBase<bool> InsertUserInfo(UserInfoDto userInfoDto)
         {
             var response = ResponseBase<bool>.CreateResponse(true);
 
@@ -58,14 +56,14 @@ namespace Service
             return response;
         }
 
-        public bool Remove(int Id)
+        public bool RemoveUserInfo(int Id)
         {
             var deletedItem = UserInfoRepository.GetById(Id);
             var result = UserInfoRepository.Remove(deletedItem);
             return result;
         }
 
-        public bool Update(UserInfoDto userInfoDto)
+        public bool UpdateUserInfo(UserInfoDto userInfoDto)
         {
             var updatedModel = UserInfoRepository.GetById(userInfoDto.Id);
             //var config = new MapperConfiguration(cfg => cfg.CreateMap<UserInfoDto, UserInfo>());
