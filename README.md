@@ -1,3 +1,3 @@
 # MVCProject
-  
-In this project you can use this MVCDataBase.xls file for database file or you can create an SQL Database something like this.
+Farklı Kullanıcılar ve Kullanıcı rolleri ekleme, düzenleme gibi yeteneklerin olduğu örnek MVC projesidir
+Projenin WCF Servis kullanılarak hazırlanmış hali ise WCF branch içerisindedir
