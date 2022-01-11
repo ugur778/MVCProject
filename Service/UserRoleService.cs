@@ -8,18 +8,20 @@ namespace Service
 {
     public partial class UserRoleService : BaseService, IUserRoleService
     {
-        public IList<UserRoleDto> GetAll(int userId)
+        public IList<UserRoleDto> GetUserRoleAll(int userId)
         {
             var result = UserRoleRepository.GetRolesByUserId(userId);
             return result;
         }
 
-        public UserRoleDto GetById(int id, int userId)
+
+
+        public UserRoleDto GetUserRoleById(int id, int userId)
         {
-            return GetAll(userId).FirstOrDefault(x => x.Id == id);
+            return GetUserRoleAll(userId).FirstOrDefault(x => x.Id == id);
         }
 
-        public KeyValuePair<bool, string> Insert(UserRoleDto userRoleDto)
+        public KeyValuePair<bool, string> InsertUserRole(UserRoleDto userRoleDto)
         {
             var validationResult = UserSameRoleValidation(userRoleDto);
 
@@ -38,14 +40,14 @@ namespace Service
 
         }
 
-        public bool Remove(int id)
+        public bool RemoveUserRole(int id)
         {
             var removedItem = UserRoleRepository.GetById(id);
             UserRoleRepository.Remove(removedItem);
             return true;
         }
 
-        public bool Update(UserRoleDto userRoleDto)
+        public bool UpdateUserRole(UserRoleDto userRoleDto)
         {
             var validationResult = UserSameRoleValidationForUpdate(userRoleDto);
 

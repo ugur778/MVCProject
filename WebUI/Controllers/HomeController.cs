@@ -1,59 +1,18 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebUI.Models;
 
 namespace WebUI.Controllers
 {
     public class HomeController : BaseController
     {
-        public ActionResult AddUserRole(int roleId, int userId)
-        {
-            UserRoleService.Insert(new UserRoleDto()
-            {
-                RoleId = roleId,
-                UserId = userId
-            });
-
-            //return RedirectToAction("UserRoleList", new { id = userId }); //userId almıyor???
-            return RedirectToAction("Index");
-        }
-        public ActionResult UserRoleList(int userId, string userName)
-        {
-            UserNotExistRoleDto model = new UserNotExistRoleDto
-            {
-                UserId = userId,
-                UserName = userName
-            };
-            var notSelectedRoles = new List<SelectListItem>();
-
-            var userCurrentRoles = UserRoleService.GetAll(userId);
-            var roles = RoleService.GetAll();
-
-            foreach (var item in roles)
-            {
-                var isExistRole = userCurrentRoles.Any(x => x.RoleId == item.Id);
-                if (!isExistRole)
-                    notSelectedRoles.Add(new SelectListItem()
-                    {
-                        Value = item.Id.ToString(),
-                        Selected = false,
-                        Text = item.Name
-                    });
-            }
-            model.NotSelectedRoles = notSelectedRoles;
-
-            return View(model);
-        }
         [HttpPost]
         public ActionResult UserRoleCreate(UserNotExistRoleDto model)
         {
-            UserInfoDto userInfoDto = new UserInfoDto();
-            userInfoDto.ModifiedDate = DateTime.Now;
-
-            UserRoleService.Insert(new UserRoleDto()
+            ProjectService.InsertUserRole(new MvcProjectService.UserRoleDto()
             {
                 CreatedOn = DateTime.Now,
                 ModifiedOn = DateTime.Now,
@@ -69,10 +28,10 @@ namespace WebUI.Controllers
                 UserId = userId,
                 UserName = userName
             };
-            var notSelectedRoles = new List<SelectListItem>();
 
-            var userCurrentRoles = UserRoleService.GetAll(userId);
-            var roles = RoleService.GetAll();
+            var notSelectedRoles = new List<SelectListItem>();
+            var userCurrentRoles = ProjectService.GetUserRoleAll(userId);
+            var roles = ProjectService.GetRoleAll();
 
             foreach (var item in roles)
             {
@@ -86,44 +45,42 @@ namespace WebUI.Controllers
                     });
             }
             model.NotSelectedRoles = notSelectedRoles;
-
             return View(model);
+
         }
         public ActionResult UserRoleDelete(int id, int userId)
         {
-            UserInfoDto userInfoDto = new UserInfoDto();
-            userInfoDto.ModifiedDate = DateTime.Now;
-            UserRoleService.Remove(id);
+            ProjectService.RemoveUserRole(id);
             return RedirectToAction("UserRoleIndex", new { id = userId });
         }
         public ActionResult UserRoleIndex(int id)
         {
-            var userRoles = UserRoleService.GetAll(id);
+            var userRoles = ProjectService.GetUserRoleAll(id);
             ViewBag.UserId = id;
-            var userInfo = UserInfoService.GetById(id);
+            var userInfo = ProjectService.GetUserInfoById(id);
             ViewBag.UserName = userInfo.UserName;
             return View(userRoles);
         }
         public ActionResult RoleEdit(int id)
         {
-            var result = RoleService.GetById(id);
+            var result = ProjectService.GetRoleById(id);
             return View(result);
         }
         [HttpPost]
-        public ActionResult RoleEdit(RoleDto model)
+        public ActionResult RoleEdit(MvcProjectService.RoleDto model)
         {
-            RoleService.Update(model);
+            ProjectService.UpdateRole(model);
             return RedirectToAction("RoleIndex");
         }
         public ActionResult RoleDetails(int id)
         {
-            var result = RoleService.GetById(id);
+            var result = ProjectService.GetRoleById(id);
             return View(result);
 
         }
         public ActionResult RoleDelete(int id)
         {
-            RoleService.Remove(id);
+            ProjectService.RemoveRole(id);
             return RedirectToAction("RoleIndex");
         }
         public ActionResult RoleCreate()
@@ -131,17 +88,17 @@ namespace WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult RoleCreate(RoleDto roleDto)
+        public ActionResult RoleCreate(MvcProjectService.RoleDto roleDto)
         {
             roleDto.ModifiedOn = DateTime.Now;
             roleDto.CreatedOn = DateTime.Now;
 
-            RoleService.Insert(roleDto);
+            ProjectService.InsertRole(roleDto);
             return RedirectToAction("RoleIndex");
         }
         public ActionResult RoleIndex()
         {
-            var data = RoleService.GetAll();
+            var data = ProjectService.GetRoleAll();
             return View(data);
         }
         public ActionResult Create()
@@ -149,40 +106,36 @@ namespace WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(UserInfoDto userInfoDto)
+        public ActionResult Create(MvcProjectService.UserInfoDto userInfoDto)
         {
-            userInfoDto.CreatedDate = DateTime.Now;
-            userInfoDto.ModifiedDate = DateTime.Now;
-            UserInfoService.Insert(userInfoDto);
+            ProjectService.InsertUserInfo(userInfoDto);
             return RedirectToAction("Index");
         }
         public ActionResult Index()
         {
-            var result = UserInfoService.GetAll();
+            var result = ProjectService.GetUserInfoAll();
             return View(result);
         }
         public ActionResult Edit(int id)
         {
-            var result = UserInfoService.GetById(id);
+            var result = ProjectService.GetUserInfoById(id);
             return View(result);
         }
         [HttpPost]
-        public ActionResult Edit(UserInfoDto model)
+        public ActionResult Edit(MvcProjectService.UserInfoDto model)
         {
-            model.ModifiedDate = DateTime.Now;
-            UserInfoService.Update(model);
+            ProjectService.UpdateUserInfo(model);
             return RedirectToAction("Index");
         }
         public ActionResult Details(int id)
         {
-            var result = UserInfoService.GetById(id);
+            var result = ProjectService.GetUserInfoById(id);
             return View(result);
         }
         public ActionResult Delete(int id)
         {
-            UserInfoService.Remove(id);
+            ProjectService.RemoveUserInfo(id);
             return RedirectToAction("Index");
         }
-
     }
 }

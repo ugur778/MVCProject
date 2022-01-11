@@ -1,15 +1,22 @@
 ﻿using DTO;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace Service
 {
+    [ServiceContract]
     public interface IUserRoleService
     {
-        UserRoleDto GetById(int id, int userId);
-        IList<UserRoleDto> GetAll(int userId);
-        KeyValuePair<bool, string> Insert(UserRoleDto userRoleDto);
-        bool Remove(int id);
-        bool Update(UserRoleDto roleDto);
+        [OperationContract]
+        UserRoleDto GetUserRoleById(int id, int userId);
+        [OperationContract]
+        IList<UserRoleDto> GetUserRoleAll(int userId);
+        [OperationContract]
+        KeyValuePair<bool, string> InsertUserRole(UserRoleDto userRoleDto);
+        [OperationContract]
+        bool RemoveUserRole(int id);
+        [OperationContract]
+        bool UpdateUserRole(UserRoleDto roleDto);
 
     }
 }
